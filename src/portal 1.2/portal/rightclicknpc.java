@@ -49,13 +49,13 @@ public class rightclicknpc implements Listener {
 							        }
 							        ((Player) p).openInventory(inv);
 								}else {
-									p.sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("whatisthis").replace("&", "¡×"));
+									p.sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("whatisthis").replace("&", "Â§"));
 								}
 							}else {
-								p.sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("whatisthis").replace("&", "¡×"));
+								p.sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("whatisthis").replace("&", "Â§"));
 							}
 						}else {
-							p.sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("donhasper").replace("&", "¡×"));
+							p.sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("donhasper").replace("&", "Â§"));
 						}
 					}
 				}
