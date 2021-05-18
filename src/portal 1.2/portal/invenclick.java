@@ -26,7 +26,7 @@ public class invenclick implements Listener {
 		File portalfile = main.file.get("portal");
 		if(e.getCurrentItem() != null) {
 			for(String string : portalconfig.getStringList("list")) {
-				if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×"))) {
+				if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§"))) {
 					e.setCancelled(true);
 					if(e.getCurrentItem().getType() != Material.AIR) {
 						if(e.getCurrentItem().getItemMeta().hasDisplayName()) {
@@ -34,35 +34,35 @@ public class invenclick implements Listener {
 								if(e.getWhoClicked().getOpenInventory() != null) {
 									e.getWhoClicked().closeInventory();
 								}
-								e.getWhoClicked().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("thisisloc").replace("&", "¡×"));
+								e.getWhoClicked().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("thisisloc").replace("&", "Â§"));
 							}else {
 								for(String string1 : portalconfig.getStringList(string + ".portallist")) {
-									if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"))) {
+									if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"))) {
 										e.getWhoClicked().teleport(portalconfig.getLocation(string + ".portallocation." + string1));
 									}
 								}
 							}
 						}
 					}
-				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¼³Á¤")) {
+				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fì„¤ì •")) {
 					e.setCancelled(true);
 					if(e.getCurrentItem().getType().equals(Material.PAPER)) {
 						if(e.getWhoClicked().getOpenInventory() != null) {
 							e.getWhoClicked().closeInventory();
 						}
 						for(String string1 : messageconfig.getStringList("replacename")) {
-							e.getWhoClicked().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + string1.replace("&", "¡×"));
+							e.getWhoClicked().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + string1.replace("&", "Â§"));
 						}
 						main.replacename.put((Player) e.getWhoClicked(), string);
 					}else if(e.getCurrentItem().getType().equals(Material.WRITTEN_BOOK)) {
 						if(e.getWhoClicked().getOpenInventory() != null) {
 							e.getWhoClicked().closeInventory();
 						}
-						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×fºÎÆ÷Å»ÀÌ¸§º¯°æ");
+						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë¶€í¬íƒˆì´ë¦„ë³€ê²½");
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 							ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 							ItemMeta m = i.getItemMeta();
-							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 							m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 							m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 							i.setItemMeta(m);
@@ -76,11 +76,11 @@ public class invenclick implements Listener {
 						if(e.getWhoClicked().getOpenInventory() != null) {
 							e.getWhoClicked().closeInventory();
 						}
-						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¹èÄ¡¼³Á¤");
+						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë°°ì¹˜ì„¤ì •");
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 							ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 							ItemMeta m = i.getItemMeta();
-							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 							m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 							m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 							i.setItemMeta(m);
@@ -94,11 +94,11 @@ public class invenclick implements Listener {
 						if(e.getWhoClicked().getOpenInventory() != null) {
 							e.getWhoClicked().closeInventory();
 						}
-						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¾ÆÀÌÅÛ¼³Á¤");
+						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fì•„ì´í…œì„¤ì •");
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 							ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 							ItemMeta m = i.getItemMeta();
-							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 							m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 							m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 							i.setItemMeta(m);
@@ -112,11 +112,11 @@ public class invenclick implements Listener {
 						if(e.getWhoClicked().getOpenInventory() != null) {
 							e.getWhoClicked().closeInventory();
 						}
-						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×fºÎÆ÷Å»»èÁ¦");
+						Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë¶€í¬íƒˆì‚­ì œ");
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 							ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 							ItemMeta m = i.getItemMeta();
-							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+							m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 							m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 							m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 							i.setItemMeta(m);
@@ -127,33 +127,33 @@ public class invenclick implements Listener {
 						}
 						e.getWhoClicked().openInventory(inv);
 					}
-				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×fºÎÆ÷Å»ÀÌ¸§º¯°æ")) {
+				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë¶€í¬íƒˆì´ë¦„ë³€ê²½")) {
 					e.setCancelled(true);
 					if(!e.getCurrentItem().getType().equals(Material.AIR)) {
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
-							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"))) {
+							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"))) {
 								if(e.getWhoClicked().getOpenInventory() != null) {
 									e.getWhoClicked().closeInventory();
 								}
 								for(String string2 : messageconfig.getStringList("replacename")) {
-									e.getWhoClicked().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + string2.replace("&", "¡×"));
+									e.getWhoClicked().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + string2.replace("&", "Â§"));
 								}
 								main.replacepname.put((Player) e.getWhoClicked(), string + ".portalname." + string1);
 							}
 						}
 					}
-				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¾ÆÀÌÅÛ¼³Á¤")) {
+				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fì•„ì´í…œì„¤ì •")) {
 					e.setCancelled(true);
 					if(!e.getCurrentItem().getType().equals(Material.AIR)) {
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
-							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"))) {
+							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"))) {
 								if(e.getWhoClicked().getOpenInventory() != null) {
 									e.getWhoClicked().closeInventory();
 								}
-								Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 27, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×a¾ÆÀÌÅÛ¼³Á¤");
+								Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 27, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§aì•„ì´í…œì„¤ì •");
 								ItemStack i = new ItemStack(Material.RED_STAINED_GLASS_PANE);
 								ItemMeta m = i.getItemMeta();
-								m.setDisplayName("¡×cÀÎº¥Åä¸®¿¡¼­ ¿øÇÏ´Â ¾ÆÀÌÅÛÀ» Å¬¸¯ÇÏ¼¼¿ä");
+								m.setDisplayName("Â§cì¸ë²¤í† ë¦¬ì—ì„œ ì›í•˜ëŠ” ì•„ì´í…œì„ í´ë¦­í•˜ì„¸ìš”");
 								i.setItemMeta(m);
 								for (int j = 0; j < 27; j++) {
 									inv.setItem(j, i);
@@ -163,7 +163,7 @@ public class invenclick implements Listener {
 							}
 						}
 					}
-				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×a¾ÆÀÌÅÛ¼³Á¤")) {
+				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§aì•„ì´í…œì„¤ì •")) {
 					e.setCancelled(true);
 					if(!e.getCurrentItem().equals(Material.AIR)) {
 						if(e.getCurrentItem().getType() != null) {
@@ -173,11 +173,11 @@ public class invenclick implements Listener {
 								if(e.getWhoClicked().getOpenInventory() != null) {
 									e.getWhoClicked().closeInventory();
 								}
-								Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¾ÆÀÌÅÛ¼³Á¤");
+								Inventory inv = Bukkit.createInventory(e.getWhoClicked(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fì•„ì´í…œì„¤ì •");
 								for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 									ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 									ItemMeta m = i.getItemMeta();
-									m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+									m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 									m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 									m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 									i.setItemMeta(m);
@@ -190,11 +190,11 @@ public class invenclick implements Listener {
 							}
 						}
 					}
-				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×fºÎÆ÷Å»»èÁ¦")) {
+				}else if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë¶€í¬íƒˆì‚­ì œ")) {
 					e.setCancelled(true);
 					if(!e.getCurrentItem().equals(Material.AIR)) {
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
-							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"))) {
+							if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"))) {
 								int a = 0;
 								for(String s : portalconfig.getStringList(string + ".portallist")) {
 									ArrayList<String> list = (ArrayList<String>) portalconfig.getStringList(string + ".portallist");
@@ -218,7 +218,7 @@ public class invenclick implements Listener {
 		try {
 			portalconfig.save(portalfile);
 		} catch (IOException e1) {
-			e.getWhoClicked().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("notsave").replace("&", "¡×"));
+			e.getWhoClicked().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("notsave").replace("&", "Â§"));
 			e1.printStackTrace();
 		}
 	}
