@@ -1,0 +1,28 @@
+name: portal
+version: 1.1
+author: taewookim562
+description: 포탈 플러그인\n설명겁나 못적음 사용법은 마인켓을 참고해주세요.
+api-version: 1.16
+main: portal.main
+
+commands:
+  portal:
+    aliases: [포탈]
+    description: 포탈 명령어
+    permission: portal.admin
+
+permissions:
+  portal.admin:
+    default: op
+    description: 포탈 관리자 권한
+    children:
+      portal.use: true
+  portal.use:
+    default: true
+    description: 포탈을 사용할 수 있는 권한
+  portal.*:
+    default: op
+    description: 포탈 모든 권한
+    children:
+      portal.admin: true
+      portal.use: true
