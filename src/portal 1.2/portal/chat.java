@@ -23,39 +23,39 @@ public class chat implements Listener {
 		File portalfile = main.file.get("portal");
 		if(main.replacename.get(e.getPlayer()) != null) {
 			e.setCancelled(true);
-			if(e.getMessage().equalsIgnoreCase("Ãë¼Ò")) {
+			if(e.getMessage().equalsIgnoreCase("ì·¨ì†Œ")) {
 				main.replacename.put(e.getPlayer(), null);
-				e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("cancel").replace("&", "¡×"));
+				e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("cancel").replace("&", "Â§"));
 			}else {
 				portalconfig.set(main.replacename.get(e.getPlayer()) + ".name", e.getMessage());
 				main.replacename.put(e.getPlayer(), null);
-				e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("replacenametrue").replace("&", "¡×"));
+				e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("replacenametrue").replace("&", "Â§"));
 			    try {
 					portalconfig.save(portalfile);
 				} catch (IOException e1) {
-					e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("notsave").replace("&", "¡×"));
+					e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("notsave").replace("&", "Â§"));
 				}
 			}
 		}else if(main.replacepname.get(e.getPlayer()) != null) {
 			e.setCancelled(true);
-			if(e.getMessage().equalsIgnoreCase("Ãë¼Ò")) {
-				e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("cancel").replace("&", "¡×"));
+			if(e.getMessage().equalsIgnoreCase("ì·¨ì†Œ")) {
+				e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("cancel").replace("&", "Â§"));
 			}else {
-				e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("replacenametrue").replace("&", "¡×"));
+				e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("replacenametrue").replace("&", "Â§"));
 				portalconfig.set(main.replacepname.get(e.getPlayer()), e.getMessage());
 			}
 			String[] s = main.replacepname.get(e.getPlayer()).replace(".", "#").split("#");
 			String string = s[0];
-			Inventory inv = Bukkit.createInventory(e.getPlayer(), 54, portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×fºÎÆ÷Å»ÀÌ¸§º¯°æ");
+			Inventory inv = Bukkit.createInventory(e.getPlayer(), 54, portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë¶€í¬íƒˆì´ë¦„ë³€ê²½");
 			for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 				ItemStack i = new ItemStack(portalconfig.getItemStack(string + ".portalitem." + string1));
 				ItemMeta m = i.getItemMeta();
-				m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"));
+				m.setDisplayName(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"));
 				m.addEnchant(Enchantment.ARROW_FIRE, 1, true);
 				m.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 				i.setItemMeta(m);
-				int cx = Integer.parseInt(portalconfig.getString(string + ".portalx." + string1).replace("&", "¡×"));
-				int cy = Integer.parseInt(portalconfig.getString(string + ".portaly." + string1).replace("&", "¡×"));
+				int cx = Integer.parseInt(portalconfig.getString(string + ".portalx." + string1).replace("&", "Â§"));
+				int cy = Integer.parseInt(portalconfig.getString(string + ".portaly." + string1).replace("&", "Â§"));
 				int a = ((cx + 1) * (cy + 1)) - 1;
 				inv.setItem(a, i);
 			}
