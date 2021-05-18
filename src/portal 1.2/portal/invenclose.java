@@ -26,12 +26,12 @@ public class invenclose implements Listener {
 		YamlConfiguration portalconfig = main.config.get("portal");
 		File portalfile = main.file.get("portal");
 		for(String string : portalconfig.getStringList("list")) {
-			if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "¡×") + "¡×f¹èÄ¡¼³Á¤")) {
+			if(e.getView().getTitle().equalsIgnoreCase(portalconfig.getString(string + ".name").replace("&", "Â§") + "Â§fë°°ì¹˜ì„¤ì •")) {
 				for(int i = 0; i <= e.getView().countSlots() - 1; i++) {
 					if(e.getView().getItem(i) != null) {
 						for(String string1 : portalconfig.getStringList(string + ".portallist")) {
 							if(e.getView().getItem(i).getType().equals(portalconfig.getItemStack(string + ".portalitem." + string1).getType())) {
-								if(e.getView().getItem(i).getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "¡×"))) {
+								if(e.getView().getItem(i).getItemMeta().getDisplayName().equalsIgnoreCase(portalconfig.getString(string + ".portalname." + string1).replace("&", "Â§"))) {
 									int x = i;
 									int y = 0;
 									portalconfig.set(string + ".portalx." + string1, x + "");
@@ -46,7 +46,7 @@ public class invenclose implements Listener {
 		try {
 			portalconfig.save(portalfile);
 		} catch (IOException e1) {
-			e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î").replace("&", "¡×") + messageconfig.getString("notsave").replace("&", "¡×"));
+			e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´").replace("&", "Â§") + messageconfig.getString("notsave").replace("&", "Â§"));
 		}
 	}
 }
