@@ -13,7 +13,7 @@ public class cmd implements Listener {
 		YamlConfiguration messageconfig = main.config.get("message");
 		if(main.replacename.get(e.getPlayer()) != null || main.replacepname.get(e.getPlayer()) != null) {
 			e.setCancelled(true);
-			e.getPlayer().sendMessage(messageconfig.getString("Á¢µÎ¾î") + messageconfig.getString("doncmd"));
+			e.getPlayer().sendMessage(messageconfig.getString("ì ‘ë‘ì–´") + messageconfig.getString("doncmd"));
 		}
 	}
 }
